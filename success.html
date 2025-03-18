@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Submitted</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #222, #444);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px cyan;
+            display: inline-block;
+            width: 90%;
+            max-width: 500px;
+        }
+        h1 {
+            color: lime;
+            text-shadow: 0px 0px 10px lime;
+        }
+        .info {
+            text-align: left;
+            padding: 10px;
+            background: black;
+            border-radius: 5px;
+        }
+        .button {
+            background: cyan;
+            color: black;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .button:hover {
+            background: lime;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 0 0 10px cyan, 0 0 20px magenta;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎉 Order Submitted Successfully! 🎉</h1>
+    <p>Thank you for ordering from Jumex Ventures.</p>
+
+    <div class="container">
+        <h2>Your Order Details</h2>
+        <div class="info">
+            <p><strong>Name:</strong> <span id="name"></span></p>
+            <p><strong>Phone:</strong> <span id="phone"></span></p>
+            <p><strong>Product 1:</strong> <span id="product1"></span> (<span id="quantity1"></span> pcs)</p>
+            <p><strong>Product 2:</strong> <span id="product2"></span> (<span id="quantity2"></span> pcs)</p>
+            <p><strong>Product 3:</strong> <span id="product3"></span> (<span id="quantity3"></span> pcs)</p>
+            <p><strong>Delivery Address:</strong> <span id="address"></span></p>
+        </div>
+
+        <button class="button" onclick="editOrder()">Edit Order</button>
+    </div>
+
+    <script>
+        let orderData = JSON.parse(localStorage.getItem("orderData"));
+
+        if (orderData) {
+            document.getElementById("name").innerText = orderData.name;
+            document.getElementById("phone").innerText = orderData.phone;
+            document.getElementById("product1").innerText = orderData.product1;
+            document.getElementById("quantity1").innerText = orderData.quantity1;
+            document.getElementById("product2").innerText = orderData.product2;
+            document.getElementById("quantity2").innerText = orderData.quantity2;
+            document.getElementById("product3").innerText = orderData.product3;
+            document.getElementById("quantity3").innerText = orderData.quantity3;
+            document.getElementById("address").innerText = orderData.address;
+        } else {
+            document.body.innerHTML = "<h1>Error: No Order Found</h1>";
+        }
+
+        function editOrder() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>

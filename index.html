@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumex Ventures - Premium Nylon</title>
+    <style>
+.nylon-container {
+  width: 90%; /* Adjust width as needed */
+  max-width: 1200px; /* Prevents items from being too wide */
+  margin: 0 auto; /* Centers the whole container */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Adds spacing between items */
+  text-align: center; /* Ensures text is centered */
+}
+
+.nylon-item {
+  background: #000; /* Black background */
+  color: #fff; /* White text */
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.nylon-box {
+  display: block; /* Ensures elements are stacked */
+  margin-bottom: 10px;
+}
+
+.nylon-box img {
+  display: block;
+  margin: 0 auto; /* Centers the images */
+  width: 80px; /* Adjust as needed */
+}
+
+.nylon-box span {
+  display: block;
+  font-weight: bold;
+}
+
+.nylon-box label {
+  display: block;
+  margin-top: 5px;
+}
+
+input[type="text"] {
+  width: 90%;
+  margin: 10px auto; /* Centers the input */
+  display: block; /* Ensures it takes full width */
+  text-align: center; /* Centers text inside input */
+  box-sizing: border-box; /* Prevents width issues */
+}
+
+.nylon-box img {
+  display: block;
+  margin: 0 auto; /* Centers the images */
+  width: 80px; /* Set a fixed width */
+  height: 80px; /* Set a fixed height to maintain a circle */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image fills the circle properly */
+  border: 2px solid #fff; /* Optional: adds a white border */
+}
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background: linear-gradient(180deg, black, #001a00);
+    color: white;
+
+        header {
+            background: black;
+            padding: 20px;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        h1, h2, p {
+            color: white;
+            text-shadow: 0 0 10px #00ff00, 0 0 20px #00ff00;
+        }
+
+        .hero {
+            padding: 20px;
+            background: black;
+            border: 2px solid #00ff00;
+            box-shadow: 0 0 10px #00ff00;
+        }
+
+        .order-form {
+            background: black;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 0 10px #00ff00;
+            border: 2px solid #00ff00;
+        }
+
+        .order-form input, .order-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            background: black;
+            color: white;
+            border: 1px solid #00ff00;
+            box-shadow: 0 0 5px #00ff00;
+        }
+
+        button {
+            background: cyan;
+            color: black;
+            padding: 15px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 0 10px cyan;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #00ff00;
+            box-shadow: 0 0 15px #00ff00;
+        }
+
+.seller-info {
+    text-align: center;
+    background: black; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); 
+}
+
+.seller-image {
+    width: 180px; 
+    height: auto; 
+    border-radius: 10px; 
+    object-fit: contain; 
+    border: 4px solid #00ff00; 
+}
+
+.seller-info img:hover {
+    transform: scale(1.1); 
+    box-shadow: 0px 0px 20px rgba(0, 255, 0, 1);
+}
+
+.seller-info h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #00ff00; 
+    text-shadow: 0px 0px 10px rgba(0, 255, 0, 0.7);
+}
+
+.seller-info p {
+    font-size: 16px;
+    color: white; 
+    text-shadow: 0px 0px 8px rgba(0, 255, 0, 0.5);
+}
+
+.seller-info a {
+    color: #00ff00;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.seller-info a:hover {
+    color: #ffcc00;
+}
+
+        .slideshow-container {
+    width: 80%;
+    max-width: 400px;
+    margin: 20px auto;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 0 10px cyan;
+    border: 2px solid cyan;
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+        .active {
+            display: block;
+        }
+
+  .nylon-box img {
+    width: 80px; /* adjusted width */
+    height: 80px; /* adjusted height */
+    object-fit: cover; /* ensures proportional scaling */
+    border-radius: 10px; /* rounded corner effect */
+  }
+    </style>
+</head>
+<body>
+
+<audio id="greetingAudio">
+    <source src="https://jumexventures.github.io/jumex-venture-place-order/PTT-20250318-WA0080-enhanced-v2-(1)%20(online-audio-converter.com).mp3" type="audio/mp3">
+</audio>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("click", function() {
+            let audio = document.getElementById("greetingAudio");
+            if (audio.paused) {
+                audio.play();
+            }
+        }, { once: true });
+    });
+</script>
+
+<!-- Slideshow -->
+        <div class="slideshow-container">
+            <img src="./nylon1.jpg" id="slideImage" alt="Nylon Image">
+        </div>
+
+<!-- Description -->
+<div class="description">
+  <h2>Explore Our Variety of Nylon Bags</h2>
+  <p>Get versatile nylon bags for various uses - food packing, trash disposal, and more. Our range includes:</p>
+  <ul>
+    <li>Big sewage bags</li>
+    <li>Small and big polybags</li>
+    <li>Small and big black nylon bags</li>
+    <li>Backo bags</li>
+    <li>Yellow and black nylon</li>
+    <li>Blue and black nylon</li>
+    <li>White packaging nylons</li>
+    <li>Strong sacks for heavier loads: poly bags, Bagco sacks, and Bagco super sacks</li>
+    <li>Yodi nylons</li>
+    <li>And many more</li>
+  </ul>
+  <p>Shop with Jume4Real, one of Nigeria's leading online wholesalers and retailers. Enjoy:</p>
+  <ul>
+    <li>Same-day delivery</li>
+    <li>Very cheap and affordable prices</li>
+    <li>Discounts on bulk purchases</li>
+  </ul>
+</div>
+
+<div class="seller-info">
+    <h3>Seller Information</h3>
+    <img src="./seller.jpg" alt="Seller Image">
+    <p><strong>Name:</strong> Inumidun Grace</p>
+    <p><strong>Address:</strong> 1A, Prince Rotimi Ogunleye Street, Oloja Igbe Laara, Off Iyalaje Road, Ikorodu, Lagos</p>
+    <p><strong>WhatsApp:</strong> 08039285527</p>
+    <p><strong>Call:</strong> 08156124131</p>
+    <p><strong>Email:</strong> inumidungrace02@gmail.com</p>
+</div>
+
+<header>
+    <h1>Welcome to Jumex Ventures</h1>
+    <p>Quality Nylons for Every Need</p>
+</header>
+
+<section class="hero">
+    <h2>Premium Nylon for Every Use</h2>
+    <p>Durable | Affordable | Reliable</p>
+</section>
+
+<section class="order-form">
+    <h2>Place Your Order</h2>
+    <form id="orderForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+
+        <label for="phone">WhatsApp Number:</label>
+        <input type="tel" id="phone" required>
+
+        <label for="address">Delivery Address:</label>
+        <input type="text" id="address" required>
+
+        <label>Urgency:</label>
+        <select id="urgency">
+            <option value="now">I need it now</option>
+            <option value="tomorrow">I need it before tomorrow</option>
+            <option value="week">I need it within three days</option>
+        </select>
+
+<h2 style="margin-top: 20px; margin-bottom: 20px; font-weight: bold;">Choose Nylon Type:</h2>
+
+<div class="nylon-options">
+  <div class="nylon-grid">
+
+   <div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/black-orebe-small.jpg" alt="Black Orebe Small">
+    <label>
+      <input type="checkbox" value="Black Orebe Small">
+      <span>Black Orebe Small</span>
+    </label>
+  </div>
+  <p>Affordable, everyday use nylon</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/black-orebe-big.jpg" alt="Black Orebe Big">
+    <label>
+      <input type="checkbox" value="Black Orebe Big">
+      <span>Black Orebe Big</span>
+    </label>
+  </div>
+  <p>Stronger, used for bulk packaging</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/handless-black.jpg" alt="Handless Black">
+    <label>
+      <input type="checkbox" value="Handless Black">
+      <span>Handless Black</span>
+    </label>
+  </div>
+  <p>Smooth finish, commonly used for wrapping</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/handless-white-semo.jpg" alt="Handless White (Semo)">
+    <label>
+      <input type="checkbox" value="Handless White (Semo)">
+      <span>Handless White (Semo)</span>
+    </label>
+  </div>
+  <p>Best for food-related packaging</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/polybag-big.jpg" alt="Polybag Big">
+    <label>
+      <input type="checkbox" value="Polybag Big">
+      <span>Polybag Big</span>
+    </label>
+  </div>
+  <p>Multipurpose, good for retail & storage</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/polybag-small.jpg" alt="Polybag Small">
+    <label>
+      <input type="checkbox" value="Polybag Small">
+      <span>Polybag Small</span>
+    </label>
+  </div>
+  <p>Compact size for small packaging needs</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/yodi.jpg" alt="Yodi">
+    <label>
+      <input type="checkbox" value="Yodi">
+      <span>Yodi</span>
+    </label>
+  </div>
+  <p>Ideal for carrying fragile or liquid items</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/moi-moi.jpg" alt="Moi-Moi">
+    <label>
+      <input type="checkbox" value="Moi-Moi">
+      <span>Moi-Moi</span>
+    </label>
+  </div>
+  <p>Designed for cooking moi-moi and food storage</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/ice-block.jpg" alt="Ice Block">
+    <label>
+      <input type="checkbox" value="Ice Block">
+      <span>Ice Block</span>
+    </label>
+  </div>
+  <p>Thicker nylon, used for ice preservation</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/pepper.jpg" alt="Pepper">
+    <label>
+      <input type="checkbox" value="Pepper">
+      <span>Pepper</span>
+    </label>
+  </div>
+  <p>Best for packaging hot items & small groceries</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/big-refuse-bag.jpg" alt="Big Refuse Bag">
+    <label>
+      <input type="checkbox" value="Big Refuse Bag">
+      <span>Big Refuse Bag</span>
+    </label>
+  </div>
+  <p>Heavy-duty bag for refuse disposal</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/backo-bag.jpg" alt="Backo Bag">
+    <label>
+      <input type="checkbox" value="Backo Bag">
+      <span>Backo Bag</span>
+    </label>
+  </div>
+  <p>Durable bag for various uses</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/yellow-black-nylon.jpg" alt="Yellow and Black Nylon">
+    <label>
+      <input type="checkbox" value="Yellow and Black Nylon">
+      <span>Yellow and Black Nylon</span>
+    </label>
+  </div>
+  <p>Vibrant yellow and black nylon bag</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/blue-black-nylon.jpg" alt="Blue and Black Nylon">
+    <label>
+      <input type="checkbox" value="Blue and Black Nylon">
+      <span>Blue and Black Nylon</span>
+    </label>
+  </div>
+  <p>Stylish blue and black nylon bag</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<div class="nylon-item">
+  <div class="nylon-box">
+    <img src="images/white-packaging-nylon.jpg" alt="White Packaging Nylon">
+    <label>
+      <input type="checkbox" value="White Packaging Nylon">
+      <span>White Packaging Nylon</span>
+    </label>
+  </div>
+  <p>Clean and versatile white packaging nylon</p>
+  <input type="text" placeholder="Write your quantity">
+</div>
+
+<p>Didn't find the type of nylon you want? Kindly indicate below👇👇👇</p>
+<div class="other-nylon">
+  <input type="text" id="otherDetails" placeholder="Type other nylon & quantity here">
+</div>
+
+        <button type="submit">Submit Order</button>
+    </form>
+</section>
+
+<footer>
+    <p>Jumex Ventures - Quality Nylons, Reliable Service</p>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    const images = ["./nylon1.jpg", "./nylon2.jpg", "./nylon3.jpg", "./nylon4.jpg", "./nylon5.jpg", "./nylon6.jpg", "./nylon7.jpg"];
+
+    function changeSlide() {
+        slideIndex = (slideIndex + 1) % images.length;
+        document.getElementById("slideImage").src = images[slideIndex];
+    }
+
+    // Run slideshow every 3 seconds
+    setInterval(changeSlide, 3000);
+</script>
+    
+<script>
+document.getElementById("orderForm").onsubmit = function(event) {
+    event.preventDefault(); // Prevent form from refreshing
+
+    let name = document.getElementById("name").value;
+    let phone = document.getElementById("phone").value;
+    let address = document.getElementById("address").value;
+    let urgency = document.getElementById("urgency").value;
+    let nylonDetails = [];
+
+    // Correct selection of nylon checkboxes and quantities
+    document.querySelectorAll(".nylon-options label input[type=checkbox]").forEach(checkbox => {
+    let quantityInput = checkbox.parentElement.nextElementSibling;
+    if (checkbox.checked && quantityInput.value.trim() !== "") {
+        nylonDetails.push(`${checkbox.value} - ${quantityInput.value.trim()}`);
+    }
+});
+
+    let otherDetails = document.getElementById("otherDetails").value.trim() || "N/A";
+
+    let orderDetails = {
+        name, phone, address, urgency, nylonDetails, otherDetails
+    };
+
+    // Store order details in sessionStorage for use on the success page
+    sessionStorage.setItem("orderDetails", JSON.stringify(orderDetails));
+
+    // **Force Redirect to Success Page**
+    window.location.href = "success.html"; 
+};
+
+</script>
+
+</body>
+</html>
